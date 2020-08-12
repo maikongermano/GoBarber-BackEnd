@@ -30,9 +30,10 @@ class ListProviderAppontimentsService {
   }: IRequest): Promise<Appointment[]> {
     const cachekey = `provider-appointments:${provider_id}-${year}-${month}-${day}`;
     // buscando no cache no redis
-    let appointments = await this.cacheProvider.recover<Appointment[]>(
+    /* let appointments = await this.cacheProvider.recover<Appointment[]>(
       cachekey,
-    );
+    ); */
+    let appointments = null;
 
     if (!appointments) {
       // busca os agendamentos postgres

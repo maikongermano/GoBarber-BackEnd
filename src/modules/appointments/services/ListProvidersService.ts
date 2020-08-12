@@ -26,6 +26,7 @@ class ListProvidersService {
     let users = await this.cacheProvider.recover<User[]>(
       `providers-list:${user_id}`,
     );
+
     if (!users) {
       // se nao econtrou no cache busca no postgres
       users = await this.usersRepository.findAllProviders({

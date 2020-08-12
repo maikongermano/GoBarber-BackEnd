@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import redis from 'redis';
-import AppError from 'shared/errors/AppError';
+import AppError from '@shared/errors/AppError';
 import { RateLimiterRedis } from 'rate-limiter-flexible';
 
 // configurando redis
